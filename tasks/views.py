@@ -16,7 +16,8 @@ def index(request):
     except Task.DoesNotExist:
         raise HttpResponse('No tasks available.')
 
-    return render(request, 'tasks/index.html', {'task_list': task_list, 'form': form})
+    return HttpResponse(task_list)
+    # return render(request, 'tasks/index.html', {'task_list': task_list, 'form': form})
 
 
 # Show details of a task
