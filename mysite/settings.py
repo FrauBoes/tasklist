@@ -82,7 +82,8 @@ DATABASES = {
             'HOST': 'tasks-instance.c33719womxye.us-east-2.rds.amazonaws.com',
             'USER': 'tasks_user',
             'PASSWORD': '807asxG45bsLmoE2',
-            'NAME': 'tasks_task'
+            'NAME': 'tasks',
+            'PORT': '3306'
             # 'OPTIONS': {
             #     'sql_mode': 'STRICT_TRANS_TABLES',
             # },
