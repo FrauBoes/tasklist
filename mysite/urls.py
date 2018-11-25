@@ -15,6 +15,6 @@ import tasks.views
 # Learn more here: https://docs.djangoproject.com/en/2.1/topics/http/urls/
 
 urlpatterns = [
-    path("", tasks.views.index, name="index"),
-    path("admin/", admin.site.urls),
+    path('tasks/', include('tasks.urls')),
+    path('admin/', admin.site.urls),
 ]

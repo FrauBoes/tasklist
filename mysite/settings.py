@@ -79,11 +79,14 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'HOST': '/cloudsql/tasklist-222812:europe-west2:tasks-instance',
-            'USER': 'tasks-user',
+            'HOST': 'tasks-instance.c33719womxye.us-east-2.rds.amazonaws.com',
+            'USER': 'tasks_user',
             'PASSWORD': '807asxG45bsLmoE2',
             'NAME': 'tasks',
-        }
+            'OPTIONS': {
+                'sql_mode': 'STRICT_TRANS_TABLES',
+            },
+    }
 }
 
 # Password validation
