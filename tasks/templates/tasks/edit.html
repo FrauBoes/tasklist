@@ -1,0 +1,34 @@
+<h1>Edit task</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'save' task.id %}" method="post">
+{% csrf_token %}
+    <label>Title</label>
+    <input type="text" name="title" id="title" value="{{ task.title }}" required><br>
+    <label>Description</label>
+    <input type="text" name="description" id="description" value="{{ task.description }}" required><br>
+    <label>Owner</label>
+    <input type="text" name="owner" id="owner" value="{{ task.owner }}" required><br>
+    <label>Status</label>
+    <input type="text" name="status" id="status" value="{{ task.status }}" required><br>
+    <label>Due Date</label>
+    <input type="date" name="due_date" id="due_date" value="{{ task.due_date|date:'Y-m-d'}}" required><br>
+    <label>Add Member</label>
+    <input type="text" name="member" id="member"><br>
+    {% if members.count > 0 %}
+    <label>Members (check member to remove from task)</label><br>
+        {% for member in members %}
+        <input type="checkbox" name="member_delete" id="member_delete" value="{{ member.id }}">{{ member }}</input><br>
+        {% endfor %}
+    {% endif %}
+
+    <input type="submit" name="save" value="Save">
+</form>
+
+<form action="{% url 'delete' task.id %}" method="post" onclick="return confirm('Are you sure?')">
+{% csrf_token %}
+    <input type="submit" value="Delete">
+</form>
+
+<p><a href="{% url 'index' %}">Back to task list</a></p>

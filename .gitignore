@@ -1,6 +1,12 @@
+# Untracked folders
 venv
-*.pyc
 staticfiles
-.env
 db.sqlite3
 getting-started/*
+.idea/
+env/
+__pycache__/
+
+# Untracked files
+workspace.xml
+*.pyc

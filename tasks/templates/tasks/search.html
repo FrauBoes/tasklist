@@ -1,0 +1,24 @@
+<h1>Search Results</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+{% if task_list %}
+    <ul>
+    {% for task in task_list %}
+        <li><a href="{% url 'details' task.id %}">{{ task.title}}</a></li>
+        <ul>
+            <li>{{ task.status }}</li>
+            <li>{{ task.due_date }}</li>
+        </ul>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No tasks are available that match your search.</p>
+{% endif %}
+
+<form action="{% url 'search' %}" method="get">
+    {{ form }}
+    <input type="submit" value="Search">
+</form>
+
+<p><a href="{% url 'index' %}">Back to task list</a></p>

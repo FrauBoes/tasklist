@@ -1,0 +1,21 @@
+<h1>Task Details</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<label>Title</label><p>{{ task.title }}</p>
+<label>Description</label><p>{{ task.description }}</p>
+<label>Owner</label><p>{{ task.owner }}</p>
+<label>Status</label><p>{{ task.status }}</p>
+<label>Due Date</label><p>{{ task.due_date }}</p>
+
+{% if members.count > 0 %}
+<label>Members</label>
+    <ul>
+        {% for member in members %}
+        <li>{{ member }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<p><a href="{% url 'edit' task.id %}">Edit</a></p>
+<p><a href="{% url 'index' %}">Back to task list</a></p>
