@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "CHANGE_ME!!!! (P.S. the SECRET_KEY environment variable will be used, if set, instead)."
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -82,10 +82,10 @@ DATABASES = {
             'HOST': 'tasks-instance.c33719womxye.us-east-2.rds.amazonaws.com',
             'USER': 'tasks_user',
             'PASSWORD': '807asxG45bsLmoE2',
-            'NAME': 'tasks',
-            'OPTIONS': {
-                'sql_mode': 'STRICT_TRANS_TABLES',
-            },
+            'NAME': 'tasks'
+            # 'OPTIONS': {
+            #     'sql_mode': 'STRICT_TRANS_TABLES',
+            # },
     }
 }
 
