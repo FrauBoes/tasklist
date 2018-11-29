@@ -83,10 +83,10 @@ DATABASES = {
             'USER': 'tasks_user',
             'PASSWORD': '807asxG45bsLmoE2',
             'NAME': 'tasks',
-            'PORT': '3306'
-            # 'OPTIONS': {
-            #     'sql_mode': 'STRICT_TRANS_TABLES',
-            # },
+            'PORT': '3306',
+            'OPTIONS': {
+                'sql_mode': 'STRICT_TRANS_TABLES',
+            },
     }
 }
 

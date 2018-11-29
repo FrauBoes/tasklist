@@ -2,23 +2,25 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-{% if task_list %}
-    <ul>
-    {% for task in task_list %}
-        <li><a href="{% url 'details' task.id %}">{{ task.title}}</a></li>
-        <ul>
-            <li>{{ task.due_date }}</li>
-            <li>{{ task.status }}</li>
-        </ul>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No tasks available.</p>
-{% endif %}
+<p>Hello there</p>
 
-<form action="{% url 'search' %}" method="get">
-    {{ form }}
-    <input type="submit" value="Search">
-</form>
-
-<p><a href="{% url 'create' %}">Create a task</a></p>
+{#{% if task_list %}#}
+{#    <ul>#}
+{#    {% for task in task_list %}#}
+{#        <li><a href="{% url 'details' task.id %}">{{ task.title}}</a></li>#}
+{#        <ul>#}
+{#            <li>{{ task.due_date }}</li>#}
+{#            <li>{{ task.status }}</li>#}
+{#        </ul>#}
+{#    {% endfor %}#}
+{#    </ul>#}
+{#{% else %}#}
+{#    <p>No tasks available.</p>#}
+{#{% endif %}#}
+{##}
+{#<form action="{% url 'search' %}" method="get">#}
+{#    {{ form }}#}
+{#    <input type="submit" value="Search">#}
+{#</form>#}
+{##}
+{#<p><a href="{% url 'create' %}">Create a task</a></p>#}
