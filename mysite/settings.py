@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import django_heroku
+import dj_database_url
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -73,22 +75,20 @@ TEMPLATES = [
 WSGI_APPLICATION = "mysite.wsgi.application"
 
 
-# Database
-# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'HOST': 'tasks-instance.c33719womxye.us-east-2.rds.amazonaws.com',
-            'USER': 'tasks_user',
-            'PASSWORD': '807asxG45bsLmoE2',
-            'NAME': 'tasks',
-            'PORT': '3306',
-            'OPTIONS': {
-                'sql_mode': 'STRICT_TRANS_TABLES',
-            },
-    }
-}
+# DATABASES = {
+#     'default': {
+#             'ENGINE': 'django.db.backends.mysql',
+#             'HOST': 'tasks-instance.c33719womxye.us-east-2.rds.amazonaws.com',
+#             'USER': 'tasks_user',
+#             'PASSWORD': '807asxG45bsLmoE2',
+#             'NAME': 'tasks',
+#             'PORT': '3306',
+#             'OPTIONS': {
+#                 'sql_mode': 'STRICT_TRANS_TABLES',
+#             },
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -124,3 +124,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
 
 django_heroku.settings(locals())
+
+# Database
+# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+# This needs to be at the bottom of the file
+# SQL url schema: mysql://USER:PASSWORD@HOST:PORT/NAME
+DATABASES['default'] = dj_database_url.config(default='mysql://tasks_user:807asxG45bsLmoE2@asks-instance.c33719womxye.us-east-2.rds.amazonaws.com:3306/tasks', conn_max_age=600)
+
