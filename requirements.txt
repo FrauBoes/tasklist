@@ -2,5 +2,5 @@ django
 PyMySQL==0.9.2
 gunicorn
 django-heroku
-mysqlclient
+# mysqlclient
 dj-database-url
