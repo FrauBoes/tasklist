@@ -129,5 +129,5 @@ django_heroku.settings(locals())
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 # This needs to be at the bottom of the file
 # SQL url schema: mysql://USER:PASSWORD@HOST:PORT/NAME
-DATABASES['default'] = dj_database_url.config(default='mysql://tasks_user:807asxG45bsLmoE2@asks-instance.c33719womxye.us-east-2.rds.amazonaws.com:3306/tasks', conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(default='mysql://tasks_user:807asxG45bsLmoE2@tasks-instance.c33719womxye.us-east-2.rds.amazonaws.com:3306/tasks', conn_max_age=600)
 
