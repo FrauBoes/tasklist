@@ -14,4 +14,4 @@ class TaskForm(forms.Form):
 
 
 class SearchForm(forms.Form):
-    search_value = forms.CharField(label='Search title, description, owner or status', max_length=100)
+    search_value = forms.CharField(label='Search for a task', max_length=100)

@@ -3,28 +3,32 @@
 
 {% block content %}
 
-
-<h1>Task List</h1>
-
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 {% if task_list %}
+
+    <div class="container-fluid">
+    <div class="row">
     <ul>
+
     {% for task in task_list %}
+
         <li><a href="{% url 'details' task.id %}">{{ task.title}}</a></li>
         <ul>
             <li>{{ task.due_date }}</li>
             <li>{{ task.status }}</li>
         </ul>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No tasks available.</p>
-{% endif %}
 
-<form action="{% url 'search' %}" method="get">
-    {{ form }}
-    <input type="submit" value="Search">
-</form>
+    {% endfor %}
+
+    </ul>
+
+{% else %}
+
+    <p>No tasks available.</p>
+    </div>
+    </div>
+
+{% endif %}
 
 {% endblock %}

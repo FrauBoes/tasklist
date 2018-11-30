@@ -11,22 +11,23 @@ from .forms import TaskForm, SearchForm
 def index(request):
     try:
         task_list = Task.objects.order_by('due_date')
-        form = SearchForm()
+        form_search = SearchForm()
 
     except Task.DoesNotExist:
         raise HttpResponse('No tasks available.')
 
-    return render(request, 'tasks/index.html', {'task_list': task_list, 'form': form})
+    return render(request, 'tasks/index.html', {'task_list': task_list, 'form_search': form_search})
 
 
 # Show details of a task
 def details(request, task_id):
     task = get_object_or_404(Task, pk=task_id)
+    form_search = SearchForm()
 
     # Get members
     members = task.member_set.all()
 
-    return render(request, 'tasks/details.html', {'task': task, 'members': members})
+    return render(request, 'tasks/details.html', {'task': task, 'members': members, 'form_search': form_search})
 
 
 # Create a new task
@@ -58,7 +59,8 @@ def create(request):
     # If a GET (or any other method) create a blank form
     else:
         form = TaskForm()
-        return render(request, 'tasks/create.html', {'form': form})
+        form_search = SearchForm()
+        return render(request, 'tasks/create.html', {'form': form, 'form_search': form_search})
 
 
 # Edit a task
@@ -67,8 +69,9 @@ def edit(request, task_id):
 
     # Get members
     members = task.member_set.all()
+    form_search = SearchForm()
 
-    return render(request, 'tasks/edit.html', {'task': task, 'members': members})
+    return render(request, 'tasks/edit.html', {'task': task, 'members': members, 'form_search': form_search})
 
 
 # Save a task
@@ -124,9 +127,9 @@ def search(request):
                                                Q(owner__icontains=search_value)|
                                                Q(status__icontains=search_value)).order_by('due_date')
         # Create a form instance
-        form = SearchForm()
+        form_search = SearchForm()
 
-        return render(request, 'tasks/search.html', {'task_list': search_task_list, 'form': form})
+        return render(request, 'tasks/search.html', {'task_list': search_task_list, 'form_search': form_search})
 
     except:
         return Http404('Something went wrong. Please try again.')

@@ -4,7 +4,8 @@
 
 {% block content %}
 
-<h1>Create a task</h1>
+<div class="container-fluid">
+<h4>Create a task</h4>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
@@ -15,5 +16,6 @@
 </form>
 
 <p><a href="{% url 'index' %}">Cancel</a></p>
+</div>
 
 {% endblock %}

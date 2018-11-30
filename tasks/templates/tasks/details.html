@@ -4,26 +4,29 @@
 
 {% block content %}
 
-
-<h1>Task Details</h1>
+<div class="container-fluid">
+<h4>Details</h4>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<label>Title</label><p>{{ task.title }}</p>
-<label>Description</label><p>{{ task.description }}</p>
-<label>Owner</label><p>{{ task.owner }}</p>
-<label>Status</label><p>{{ task.status }}</p>
-<label>Due Date</label><p>{{ task.due_date }}</p>
+<label>Title<p>{{ task.title }}</p></label><br>
+<label>Description<p>{{ task.description }}</p></label><br>
+<label>Owner<p>{{ task.owner }}</p></label><br>
+<label>Status<p>{{ task.status }}</p></label><br>
+<label>Due Date<p>{{ task.due_date }}</p></label><br>
 
 {% if members.count > 0 %}
+
 <label>Members</label>
     <ul>
         {% for member in members %}
         <li>{{ member }}</li>
         {% endfor %}
     </ul>
+
 {% endif %}
 
 <p><a href="{% url 'edit' task.id %}">Edit</a></p>
+</div>
 
 {% endblock %}

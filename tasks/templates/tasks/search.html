@@ -1,30 +1,35 @@
 {% extends "tasks/base.html" %}
 {% load bootstrap4 %}
 {% load crispy_forms_tags %}
+
 {% block content %}
-
-
-<h1>Search Results</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 {% if task_list %}
+
+<div class="container-fluid">
+<h4>Search Results</h4>
     <ul>
+
     {% for task in task_list %}
+
         <li><a href="{% url 'details' task.id %}">{{ task.title}}</a></li>
         <ul>
             <li>{{ task.status }}</li>
             <li>{{ task.due_date }}</li>
         </ul>
+
     {% endfor %}
+
     </ul>
+
 {% else %}
+
     <p>No tasks are available that match your search.</p>
+    
 {% endif %}
 
-<form action="{% url 'search' %}" method="get">
-    {{ form|crispy }}
-    <input type="submit" value="Search">
-</form>
+</div>
 
 {% endblock %}
