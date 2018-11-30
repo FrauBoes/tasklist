@@ -1,6 +1,6 @@
 django
-# PyMySQL==0.9.2
 gunicorn
 django-heroku
-# mysqlclient
-# dj-database-url
+django-crispy-forms
+bootstrap4
+django-crispy-forms
