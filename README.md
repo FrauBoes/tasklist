@@ -1,29 +1,29 @@
-# Python: Getting Started
+# COMP41110 Task List
 
-A barebones Django app, which can easily be deployed to Heroku.
+A simple Djnago app built with the Django [getting-started-with-python] (https://devcenter.heroku.com/articles/getting-started-with-python) template.
 
-This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
 
 ## Running Locally
 
-Make sure you have Python 3.7 [installed locally](http://install.python-guide.org). To push to Heroku, you'll need to install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), as well as [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
+Make sure you have the following installed:
+Python 3.7 [installed locally](http://install.python-guide.org)
+virtualenv [installed locally](https://virtualenv.pypa.io/en/latest/installation/)
+
+Unzip the source code.
 
 ```sh
-$ git clone https://github.com/heroku/python-getting-started.git
-$ cd python-getting-started
+$ cd tasklist2
 
 $ python3 -m venv getting-started
 $ pip install -r requirements.txt
 
-$ createdb python_getting_started
-
 $ python manage.py migrate
 $ python manage.py collectstatic
 
-$ heroku local
+$ python manage.py runserver
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+Your app should now be running on [localhost:8000](http://localhost:8000/).
 
 ## Deploying to Heroku
 
@@ -37,9 +37,3 @@ $ heroku open
 or
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using Python on Heroku, see these Dev Center articles:
-
-- [Python on Heroku](https://devcenter.heroku.com/categories/python)
