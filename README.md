@@ -1,13 +1,13 @@
 # COMP41110 Task List
 
-A simple Djnago app built with the Django [getting-started-with-python] (https://devcenter.heroku.com/articles/getting-started-with-python) template.
+A simple Django app built with the Django [getting-started-with-python] (https://devcenter.heroku.com/articles/getting-started-with-python) template.
 
 
 ## Running Locally
 
 Make sure you have the following installed:
 Python 3.7 [installed locally](http://install.python-guide.org)
-virtualenv [installed locally](https://virtualenv.pypa.io/en/latest/installation/)
+and virtualenv [installed locally](https://virtualenv.pypa.io/en/latest/installation/)
 
 Unzip the source code.
 
