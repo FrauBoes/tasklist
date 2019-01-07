@@ -1,6 +1,6 @@
 # COMP41110 Task List
 
-A simple Django app built with the Django [getting-started-with-python] (https://github.com/heroku/python-getting-started) template, for more details see [Heroku Getting started with Python] (https://devcenter.heroku.com/articles/getting-started-with-python).
+A simple Django app built with the Django [getting-started-with-python](https://github.com/heroku/python-getting-started) template, for more details see [Heroku Getting started with Python](https://devcenter.heroku.com/articles/getting-started-with-python).
 
 
 ## Running Locally
